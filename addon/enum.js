@@ -11,5 +11,9 @@ export default EmberObject.extend({
     this.get('options').forEach((option) => {
       this.set(`is${option.camelize().capitalize()}`, equal('value', option));
     });
-  }))
+  })),
+
+  toString() {
+    return `<${this.get('value')}>`;
+  }
 });
